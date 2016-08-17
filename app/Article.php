@@ -6,5 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    //
+
+    /**
+     * @param $query
+     * @param $take
+     * @return mixed
+     */
+    public function scopeTrending($query, $take = 3)
+    {
+        return $query->orderBy('reads', 'desc')->take($take)->get();
+    }
 }

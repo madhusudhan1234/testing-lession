@@ -65,7 +65,17 @@ return [
             'strict' => false,
             'engine' => null,
         ],
-
+        'mysql_testing' => [
+            'driver'    => 'mysql',
+            'host'      => env('TESTING_DB_HOST', 'localhost'),
+            'database'  => env('TESTING_DB_DATABASE', 'testing.testing-lession'),
+            'username'  => env('TESTING_DB_USERNAME', 'root'),
+            'password'  => env('TESTING_DB_PASSWORD', 'admin'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', 'localhost'),
